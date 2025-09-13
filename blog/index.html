@@ -1,0 +1,128 @@
+---
+layout: default
+title: Cybersecurity Industry Insights
+permalink: /blog/
+---
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cybersecurity Industry Insights - Adam Rivers</title>
+
+  <style>
+    /* Base and layout */
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: #fafafa;
+      color: #222;
+      line-height: 1.7;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+      color: #012a4a;
+      text-align: center;
+    }
+
+    ul.post-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul.post-list li {
+      background: #ffffff;
+      border: 1px solid #e1e5eb;
+      border-radius: 6px;
+      padding: 1.4rem 1.8rem;
+      margin-bottom: 1.6rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    ul.post-list li:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(1, 42, 74, 0.15);
+    }
+
+    ul.post-list li a {
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: #00509e;
+      text-decoration: none;
+      display: block;
+    }
+
+    ul.post-list li a:hover {
+      color: #003366;
+      text-decoration: underline;
+    }
+
+    .post-date {
+      font-size: 0.9rem;
+      color: #6c7a89;
+      margin-top: 0.35rem;
+      font-style: italic;
+    }
+
+    .post-excerpt {
+      color: #444d56;
+      font-size: 1.05rem;
+      margin-top: 0.75rem;
+      max-width: 95%;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e1e5eb;
+      margin: 2rem 0;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        margin: 20px 10px;
+        padding: 0 10px;
+      }
+      h1 {
+        font-size: 2.8rem;
+      }
+      ul.post-list li {
+        padding: 1rem 1.2rem;
+      }
+      ul.post-list li a {
+        font-size: 1.25rem;
+      }
+      .post-excerpt {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Cybersecurity Industry Insights</h1>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <span class="post-date">{{ post.date | date: "%B %-d, %Y" }}</span>
+        {% if post.excerpt %}
+          <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 180 }}</p>
+        {% endif %}
+        <hr />
+      </li>
+    {% else %}
+      <li>No articles available at this time. Please check back soon!</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

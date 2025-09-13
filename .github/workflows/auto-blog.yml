@@ -2,60 +2,89 @@ name: Build and Deploy Jekyll Blog
 
 on:
   schedule:
-    - cron: '0 1 * * *' # daily at 1 AM UTC
+    - cron: '0 1 * * *'  # run daily at 1 AM UTC
   workflow_dispatch:
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_WORKSPACE: /home/runner/work/OfficialAdamRivers.github.io/OfficialAdamRivers.github.io
     permissions:
       contents: write
+
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@master
-        with:
-          root-reserve-mb: 512
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
+    - name: Maximize build space
+      uses: easimon/maximize-build-space@master
+      with:
+        root-reserve-mb: 512
+        temp-reserve-mb: 100
+        swap-size-mb: 1024
+        overprovision-lvm: true
+        remove-dotnet: 'true'
+        remove-android: 'true'
+        remove-haskell: 'true'
+        remove-codeql: 'true'
+        remove-docker-images: 'true'
 
-      - name: Checkout repo
-        uses: actions/checkout@v4
+    - name: Show disk usage before checkout
+      run: df -h
 
-      - name: Cache Ruby gems
-        uses: actions/cache@v3
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
+    - name: Checkout repo
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 1
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.2'
-          bundler-cache: true
+    - name: Clean up large files / caches on root disk
+      run: |
+        sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
+        sudo docker image prune --all --force
+        sudo docker builder prune -a
+        sudo apt-get clean
+        sudo rm -rf /home/runner/.cache/*
 
-      - name: Cache Python packages
-        uses: actions/cache@v3
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
+    - name: Cache Ruby gems
+      uses: actions/cache@v3
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: ${{ runner.os }}-gems-
 
-      - name: Install Python dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install transformers language_tool_python sentence-transformers jinja2
+    - name: Setup Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.2'
+        bundler-cache: true
 
-      - name: Run blog content generation script
-        run: python generate_content.py
+    - name: Cache Python packages
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: ${{ runner.os }}-pip-
 
-      - name: Build Jekyll site
-        run: bundle exec jekyll build
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+    - name: Show disk usage after dependencies installs
+      run: df -h
+
+    - name: Run blog content generation script
+      run: python generate_content.py
+
+    - name: Show disk usage before build
+      run: df -h
+
+    - name: Build Jekyll site
+      run: bundle exec jekyll build
+
+    - name: Show disk usage before deploy
+      run: df -h
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./_site

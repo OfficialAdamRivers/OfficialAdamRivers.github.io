@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adam Rivers — Cybersecurity, AI & Theoretical Physics Leader</title>
+  <meta name="description" content="Adam Rivers — visionary scientist and CEO specializing in cybersecurity, AI, quantum systems, and theoretical physics. Explore research, projects, and collaboration opportunities." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet" />
+  
+  <!-- JSON-LD structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "name": "Adam Rivers",
+        "url": "https://adamrivers.github.io",
+        "image": "https://media-exp1.licdn.com/dms/image/C4E03AQHq-EKMWgmm9w/profile-displayphoto-shrink_400_400/0/1652345678901?e=2147483647&v=beta&t=Uv_yaFpI3WyxtvsX6g29Emr1gkxb1JbiaAzDn1eyt-U",
+        "sameAs": [
+          "https://www.linkedin.com/in/adam-rivers-abtzpro23",
+          "https://github.com/abtzpro",
+          "https://abtzpro.github.io"
+        ],
+        "jobTitle": "CEO, Scientist, Cybersecurity & AI Technology Leader",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Hello Security LLC",
+          "url": "https://hellosecurityllc.github.io",
+          "sameAs": [
+            "https://www.linkedin.com/company/hellosecurity",
+            "https://twitter.com/hellosecurity"
+          ],
+          "description": "Cybersecurity consultancy specializing in vCISO, offensive and defensive cybersecurity, AI-driven security solutions."
+        },
+        "description": "Visionary technology executive and cybersecurity architect specializing in AI, quantum systems, and enterprise cybersecurity. Author of 'The Holographic Universe – The Final Discovery'.",
+        "knowsAbout": [
+          "Cybersecurity strategy",
+          "Virtual CISO services",
+          "Artificial intelligence",
+          "Quantum computing",
+          "Theoretical physics",
+          "Vulnerability management",
+          "Enterprise security",
+          "Incident response",
+          "Security audits",
+          "Malware simulation",
+          "Risk management"
+        ]
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "The Holographic Universe – The Final Discovery",
+        "author": {
+          "@type": "Person",
+          "name": "Adam Rivers"
+        },
+        "datePublished": "2024-01-15",
+        "description": "A groundbreaking book exploring quantum mechanics, black holes, and consciousness.",
+        "inLanguage": "en",
+        "url": "https://www.curios.com/collections/0x18db6d216fe18857395104041abbd7ddc10cb925"
+      },
+      {
+        "@type": "Service",
+        "provider": {
+          "@type": "Organization",
+          "name": "Hello Security LLC",
+          "url": "https://hellosecurityllc.github.io"
+        },
+        "serviceType": "Virtual Chief Information Security Officer",
+        "description": "Virtual CISO services providing expert security leadership and strategy for enterprises."
+      },
+      {
+        "@type": "WebSite",
+        "url": "https://adamrivers.github.io",
+        "name": "Adam Rivers Official Portfolio",
+        "description": "Online portfolio showcasing Adam Rivers's leadership in cybersecurity, AI, and quantum physics."
+      }
+    ]
+  }
+  </script>
+  
+  <style>
+    /* Reset and base styling for all elements */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      font-family: 'Montserrat', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background: linear-gradient(135deg, #9ca3af, #f3f4f6);
+      color: #111827;
+      line-height: 1.6;
+    }
+    body[data-theme='dark'] {
+      background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+      color: #e0e7ff;
+    }
+    body {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 12px;
+      height: 12px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.15);
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    
+    /* Container for page content */
+    .container {
+      max-width: 900px;
+      margin: 3rem auto 4rem;
+      padding: 3rem 2.5rem 3rem;
+      background-color: var(--bg-color, #f3f4f6);
+      border-radius: 1.5rem;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+      flex-grow: 1;
+      transition: background-color 0.3s ease;
+    }
+    body[data-theme='dark'] .container {
+      background-color: #0f172a;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+    }
+    
+    /* Header and navigation bar */
+    header {
+      backdrop-filter: saturate(180%) blur(12px);
+      background-color: var(--nav-bg, rgba(255, 255, 255, 0.95));
+      position: sticky;
+      top: 0;
+      z-index: 11000;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+    }
+    body[data-theme='dark'] header {
+      --nav-bg: rgba(15, 23, 42, 0.85);
+      background-color: var(--nav-bg);
+    }
+    nav {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    a.brand {
+      font-family: 'Roboto Slab', serif;
+      font-weight: 700;
+      font-size: 2rem;
+      color: inherit;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      user-select: none;
+      transition: color 0.3s ease;
+    }
+    a.brand:hover,
+    a.brand:focus {
+      color: #3b82f6;
+      outline-offset: 3px;
+      outline-style: solid;
+      outline-color: #3b82f6;
+    }
+    a.brand span {
+      margin-left: 0.75rem;
+      letter-spacing: 0.1em;
+    }
+    button#btn-nav-open {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 2.25rem;
+      color: #6b7280;
+      display: none;
+      transition: color 0.3s ease;
+      padding: 0;
+    }
+    button#btn-nav-open:hover,
+    button#btn-nav-open:focus {
+      color: #3b82f6;
+      outline-offset: 3px;
+      outline-style: solid;
+      outline-color: #3b82f6;
+    }
+    ul#nav-list {
+      list-style: none;
+      display: flex;
+      gap: 2.5rem;
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+    ul#nav-list.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 1.5rem;
+      background-color: var(--nav-bg);
+      padding: 1.25rem 2.5rem;
+      max-width: 280px;
+      border-radius: 1.25rem;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.22);
+      z-index: 11001;
+    }
+    ul#nav-list li a {
+      color: inherit;
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      user-select: none;
+      display: inline-block;
+      padding: 0.5rem 0;
+    }
+    ul#nav-list li a:hover,
+    ul#nav-list li a:focus,
+    ul#nav-list li a.active {
+      color: #3b82f6;
+      outline-offset: 3px;
+      outline-style: solid;
+      outline-color: #3b82f6;
+    }
+    #theme-toggle {
+      font-size: 1.75rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #3b82f6;
+      margin-left: 1.25rem;
+      transition: color 0.3s ease;
+      user-select: none;
+      padding: 0;
+    }
+    #theme-toggle:hover,
+    #theme-toggle:focus {
+      color: #60a5fa;
+      outline-offset: 3px;
+      outline-style: solid;
+      outline-color: #60a5fa;
+    }
+    
+    /* Hero / About Section */
+    #about {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    #about h1 {
+      font-family: 'Roboto Slab', serif;
+      font-size: 3.5rem;
+      font-weight: 900;
+      margin-bottom: 0.25rem;
+      letter-spacing: 0.1em;
+      color: var(--text-color);
+    }
+    #about .subhead {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.35rem;
+      color: #2563eb;
+      margin-bottom: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    #about p.intro {
+      font-size: 1.15rem;
+      max-width: 620px;
+      margin: 0 auto 2.5rem;
+      color: var(--text-color);
+      line-height: 1.58;
+      font-weight: 500;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .profile-img {
+      display: block;
+      width: 180px;
+      height: 180px;
+      margin: 0 auto 3rem;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #3b82f6;
+      box-shadow: 0 15px 36px rgba(59, 130, 246, 0.85);
+      transition: box-shadow 0.3s ease;
+    }
+    .profile-img:hover,
+    .profile-img:focus {
+      box-shadow: 0 25px 50px rgba(59, 130, 246, 1);
+    }
+    
+    /* Section Titles */
+    h2 {
+      font-family: 'Roboto Slab', serif;
+      font-size: 2.1rem;
+      font-weight: 900;
+      text-align: center;
+      color: var(--text-color);
+      margin: 3rem auto 2rem;
+      max-width: max-content;
+      border-bottom: 4px solid #3b82f6;
+      padding-bottom: 0.4rem;
+      letter-spacing: 0.1em;
+    }
+    
+    /* Content sections text */
+    section p,
+    section ul {
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      line-height: 1.6;
+      font-size: 1.11rem;
+      color: var(--text-color);
+    }
+    section ul {
+      padding-left: 1.8rem;
+      margin-bottom: 2.3rem;
+    }
+    section ul li {
+      margin-bottom: 0.9rem;
+    }
+    a {
+      color: #2563eb;
+      text-decoration: underline;
+      transition: color 0.3s ease;
+    }
+    a:hover,
+    a:focus {
+      color: #3b82f6;
+      outline-offset: 3px;
+      outline-color: #3b82f6;
+      outline-style: solid;
+    }
+    
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 0.95rem 2.5rem;
+      font-size: 1.18rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #2563eb, #3b82f6);
+      border-radius: 9999px;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(59, 130, 246, 0.75);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      margin: 1.5rem auto 0;
+      cursor: pointer;
+      border: none;
+    }
+    .btn:hover,
+    .btn:focus {
+      background: linear-gradient(90deg, #60a5fa, #3b82f6);
+      box-shadow: 0 18px 40px rgba(59, 130, 246, 1);
+      outline-offset: 3px;
+      outline-color: #60a5fa;
+      outline-style: solid;
+    }
+    
+    /* Social Icons */
+    .social {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      font-size: 2rem;
+      margin-top: 3rem;
+    }
+    .social a {
+      color: #60a5fa;
+      transition: color 0.3s ease;
+      display: inline-flex;
+    }
+    .social a:hover,
+    .social a:focus {
+      color: #2563eb;
+      outline-offset: 3px;
+      outline-color: #2563eb;
+      outline-style: solid;
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      user-select: none;
+      font-size: 1rem;
+      color: var(--text-color);
+      padding: 2.5rem 1rem;
+      background-color: var(--nav-bg, rgba(255, 255, 255, 0.95));
+      box-shadow: inset 0 1px 5px rgba(0,0,0,0.12);
+      transition: background-color 0.3s ease;
+      margin-top: auto;
+    }
+    body[data-theme='dark'] footer {
+      background-color: rgba(15, 23, 42, 0.85);
+    }
+    
+    /* Section reveal animation */
+    section {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 0.9s ease, transform 0.7s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      nav {
+        padding: 0.75rem 1.2rem;
+        gap: 0.75rem;
+      }
+      button#btn-nav-open {
+        display: block;
+      }
+      ul#nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 56px;
+        right: 1rem;
+        max-width: 260px;
+        background-color: var(--nav-bg);
+        border-radius: 1rem;
+        box-shadow: 0 14px 36px rgba(0,0,0,0.7);
+        padding: 1rem 2rem;
+        backdrop-filter: saturate(180%) blur(20px);
+        z-index: 12000;
+      }
+      ul#nav-list.open {
+        display: flex;
+      }
+      ul#nav-list li a {
+        font-size: 1.3rem;
+        padding: 0.6rem 0;
+      }
+      .profile-img {
+        width: 140px;
+        height: 140px;
+        margin-bottom: 2rem;
+      }
+      .container {
+        padding: 2rem 1.2rem 2rem;
+        margin: 2rem 1rem 3rem;
+      }
+      #about h1 {
+        font-size: 2.8rem;
+      }
+      #about .subhead {
+        font-size: 1.2rem;
+      }
+      h2 {
+        font-size: 1.7rem;
+        margin-bottom: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body data-theme="light" lang="en">
+
+<header>
+  <nav role="navigation" aria-label="Primary navigation" class="nav-container">
+    <a href="#" class="brand" aria-label="Adam Rivers Home" tabindex="0">
+      <svg xmlns="http://www.w3.org/2000/svg"
+           viewBox="0 0 64 64" fill="none" width="36" height="36" aria-hidden="true" focusable="false" style="vertical-align:middle; margin-right: 0.5rem;">
+        <circle cx="32" cy="32" r="30" stroke="#60A5FA" stroke-width="4"/>
+        <path d="M20 44 L44 20" stroke="#60A5FA" stroke-width="4" stroke-linecap="round"/>
+        <path d="M20 20 L44 44" stroke="#60A5FA" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+      <span>Adam Rivers</span>
+    </a>
+
+    <button id="btn-nav-open" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-list" class="hamburger" tabindex="0">&#9776;</button>
+
+    <ul id="nav-list" role="menubar" aria-label="Primary navigation">
+      <li role="none"><a role="menuitem" href="#about" class="nav-link" tabindex="0">About</a></li>
+      <li role="none"><a role="menuitem" href="#hire" class="nav-link" tabindex="0">Hire</a></li>
+      <li role="none"><a role="menuitem" href="#partner" class="nav-link" tabindex="0">Partner</a></li>
+      <li role="none"><a role="menuitem" href="#invest" class="nav-link" tabindex="0">Invest</a></li>
+      <li role="none"><a role="menuitem" href="#resources" class="nav-link" tabindex="0">Resources</a></li>
+      <li role="none"><a role="menuitem" href="#contact" class="nav-link" tabindex="0">Contact</a></li>
+    </ul>
+
+    <button id="theme-toggle" aria-label="Toggle light and dark mode" tabindex="0" title="Toggle Light/Dark Mode" >
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false" >
+        <circle cx="12" cy="12" r="5" />
+      </svg>
+    </button>
+  </nav>
+</header>
+
+<main class="container" role="main">
+  <section id="about" tabindex="0" aria-labelledby="headline-title" class="section-glass reveal">
+    <h1 id="headline-title">Adam Rivers</h1>
+    <h2 class="subhead">Cybersecurity Architect &amp; AI Researcher</h2>
+    <p class="intro">
+      Driving Innovation in Quantum Systems, AI, and Enterprise Security through cutting-edge research and practical leadership. CEO of Hello Security LLC, author, and creator of breakthrough cybersecurity tools.
+    </p>
+    <img src="https://media-exp1.licdn.com/dms/image/C4E03AQHq-EKMWgmm9w/profile-displayphoto-shrink_400_400/0/1652345678901?e=2147483647&v=beta&t=Uv_yaFpI3WyxtvsX6g29Emr1gkxb1JbiaAzDn1eyt-U" alt="Adam Rivers profile picture" class="profile-img" loading="lazy" />
+    <h2>Key Contributions</h2>
+    <ul>
+      <li>Original time travel formulation based on Einstein’s field equations and stress-energy tensors, extending Einstein and Hawking’s work.</li>
+      <li>Author of <em>The Holographic Universe – The Final Discovery</em>, synthesizing quantum mechanics, black hole physics, and consciousness.</li>
+      <li>Creator of <strong>BlockerBoy</strong>, an adaptive intrusion detection system developed in Python during active cyberattacks.</li>
+      <li>Developer of automated vulnerability scanners, quantum machine learning libraries, and AI bots showcased on GitHub.</li>
+      <li>CEO of Hello Security LLC and Safe Site Security LLC, delivering innovative cybersecurity solutions worldwide.</li>
+    </ul>
+    <p>
+      Explore Adam’s <a href="https://github.com/abtzpro" target="_blank" rel="noopener noreferrer">GitHub repositories</a> and official portfolio site <a href="https://adamrivers.github.io" target="_blank" rel="noopener noreferrer">adamrivers.github.io</a>.
+    </p>
+  </section>
+
+  <section id="hire" tabindex="0" aria-labelledby="hire-title" class="section-glass reveal">
+    <h2 id="hire-title">Hire Adam</h2>
+    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=500&q=80" alt="Business handshake" style="max-width: 100%; border-radius: 1rem; margin-bottom: 1rem; box-shadow: 0 8px 16px rgba(0,0,0,0.2);" loading="lazy" />
+    <p>Organizations seeking expert leadership in AI, cybersecurity, or R&D can benefit from Adam Rivers's combination of scientific rigor and entrepreneurial innovation. Areas of expertise include:</p>
+    <ul>
+      <li>Cybersecurity strategy & enterprise defense</li>
+      <li>Artificial intelligence & machine learning development</li>
+      <li>Quantum computing research and engineering</li>
+      <li>Theoretical physics & applied mathematics consulting</li>
+      <li>Technology leadership, mentoring, and innovation management</li>
+    </ul>
+    <p>Contact Adam to explore tailored consulting or executive roles for your organization.</p>
+  </section>
+
+  <section id="partner" tabindex="0" aria-labelledby="partner-title" class="section-glass reveal">
+    <h2 id="partner-title">Partner with Adam</h2>
+    <img src="https://images.unsplash.com/photo-1521790797524-b2497295b8a0?auto=format&fit=crop&w=500&q=80" alt="Team collaboration" style="max-width: 100%; border-radius: 1rem; margin-bottom: 1rem; box-shadow: 0 8px 16px rgba(0,0,0,0.2);" loading="lazy" />
+    <p>Collaborate on groundbreaking research or technology ventures with Adam Rivers. His work in quantum AI, cybersecurity innovation, and theoretical physics offers rich opportunities for partnership across academia, industry, and government sectors.</p>
+    <p>Together, drive scientific breakthroughs and secure technological advancement for a safer and smarter future.</p>
+  </section>
+
+  <section id="invest" tabindex="0" aria-labelledby="invest-title" class="section-glass reveal">
+    <h2 id="invest-title">Invest in Adam</h2>
+    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500&q=80" alt="Investment concept" style="max-width: 100%; border-radius: 1rem; margin-bottom: 1rem; box-shadow: 0 8px 16px rgba(0,0,0,0.2);" loading="lazy" />
+    <p>Investors focused on disruptive tech, AI, cybersecurity, and quantum computing can partner with Adam Rivers to support scalable, high-impact solutions addressing global challenges.</p>
+    <p>Join the innovation wave led by an established visionary and proven technology leader.</p>
+  </section>
+
+  <section id="resources" tabindex="0" aria-labelledby="resources-title" class="section-glass reveal">
+    <h2 id="resources-title">Resources and Links</h2>
+    <ul>
+      <li><strong>Book:</strong> <em>The Holographic Universe – The Final Discovery</em> — Available on Curios: <a href="https://www.curios.com/collections/0x18db6d216fe18857395104041abbd7ddc10cb925" target="_blank" rel="noopener noreferrer">Visit Curios</a></li>
+      <li><strong>GitHub:</strong> <a href="https://github.com/abtzpro" target="_blank" rel="noopener noreferrer">https://github.com/abtzpro</a></li>
+      <li><strong>Official Portfolio:</strong> <a href="https://adamrivers.github.io" target="_blank" rel="noopener noreferrer">https://adamrivers.github.io</a></li>
+      <li><strong>Notable Project:</strong> BlockerBoy NIDS — <a href="https://abtzpro.github.io" target="_blank" rel="noopener noreferrer">https://abtzpro.github.io</a></li>
+      <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/adam-rivers-abtzpro23" target="_blank" rel="noopener noreferrer">Adam Rivers Profile</a></li>
+    </ul>
+  </section>
+
+  <section id="contact" tabindex="0" aria-labelledby="contact-title" class="section-glass reveal">
+    <h2 id="contact-title">Contact</h2>
+    <p>For inquiries, consulting requests, partnerships, or investment discussions, please contact:</p>
+    <p><strong><a href="mailto:adamrivers2025@proton.me">adamrivers2025@proton.me</a></strong></p>
+    <p>Alternatively, connect on LinkedIn or GitHub for professional engagement.</p>
+
+    <div class="social" aria-label="Social links">
+      <a href="mailto:adamrivers2025@proton.me" aria-label="Email Adam Rivers" tabindex="0" title="Email">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" viewBox="0 0 24 24"><path d="M4 4h16v16H4z" /><path d="M4 4l8 8 8-8" /></svg>
+      </a>
+      <a href="https://github.com/abtzpro" target="_blank" aria-label="GitHub Profile" tabindex="0" title="GitHub">
+        <svg fill="currentColor" aria-hidden="true" focusable="false" height="24" width="24" role="img" viewBox="0 0 24 24"><path d="M12 0C5.37158 0 0 5.37258 0 12.0003C0 17.3029 3.438 21.7997 8.207 23.3875C8.806 23.4977 9.023 23.1432 9.023 22.8333C9.023 22.5534 9.012 21.7633 9.007 20.7161C5.6725 21.3613 4.968 19.2822 4.968 19.2822C4.422 17.934 3.6335 17.5827 3.6335 17.5827C2.5455 16.8747 3.7195 16.8893 3.7195 16.8893C4.922 16.9752 5.5555 18.0997 5.5555 18.0997C6.6095 20.0427 8.463 19.493 9.153 19.1696C9.258 18.3955 9.555 17.8473 9.8845 17.5635C7.211 17.2774 4.415 16.2466 4.415 11.5444C4.415 10.2239 4.895 9.12894 5.695 8.25411C5.565 7.9655 5.133 6.71229 5.805 5.04509C5.805 5.04509 6.849 4.73275 9 6.30333C9.984 6.0505 11.025 5.92398 12.0675 5.9176C13.11 5.92398 14.1525 6.0505 15.1375 6.30333C17.2875 4.7345 18.3305 5.04509 18.3305 5.04509C19.003 6.71229 18.57 7.9655 18.44 8.25411C19.2445 9.12894 19.7215 10.2239 19.7215 11.5444C19.7215 16.2599 16.92 17.275 14.242 17.5573C14.66 17.935 15.034 18.6575 15.034 19.7474C15.034 21.2982 15.023 22.4846 15.023 22.8333C15.023 23.15 15.237 23.5077 15.85 23.3865C20.625 21.8 24.06 17.3063 24.06 12.0003C24.06 5.37258 18.6275 0 12 0Z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/adam-rivers-abtzpro23" target="_blank" aria-label="LinkedIn Profile" tabindex="0" title="LinkedIn">
+        <svg fill="currentColor" aria-hidden="true" focusable="false" height="24" width="24" role="img" viewBox="0 0 24 24"><path d="M20.452 20.452h-3.286v-5.006c0-1.194-.025-2.731-1.66-2.731-1.662 0-1.916 1.298-1.916 2.641v5.098H10.19V9h3.154v1.561h.045c.44-.834 1.51-1.714 3.105-1.714 3.32 0 3.933 2.19 3.933 5.032v6.573zM5.337 7.433a1.893 1.893 0 1 1 0-3.786 1.893 1.893 0 0 1 0 3.786zm1.646 13.019H3.69V9h3.293v11.452zM22.225 0H1.771C.792 0 0 .77 0 1.722v20.555C0 23.23.792 24 1.771 24h20.451C23.207 24 24 23.23 24 22.277V1.722C24 .77 23.207 0 22.225 0z"/></svg>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 Adam Rivers — All rights reserved.</p>
+</footer>
+
+<script>
+  // Navigation toggle
+  const btnNavOpen = document.getElementById('btn-nav-open');
+  const navList = document.getElementById('nav-list');
+  const navLinks = navList.querySelectorAll('a.nav-link');
+
+  btnNavOpen.addEventListener('click', () => {
+    const open = navList.classList.toggle('open');
+    btnNavOpen.setAttribute('aria-expanded', open);
+  });
+
+  // Hide mobile menu on link click
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth < 768) {
+        navList.classList.remove('open');
+        btnNavOpen.setAttribute('aria-expanded', false);
+      }
+    });
+  });
+
+  // Highlight active nav link on scroll
+  const sections = document.querySelectorAll('section');
+  const allNavLinks = document.querySelectorAll('nav ul li a.nav-link');
+
+  function onScroll() {
+    let scrollPosition = window.scrollY + 80;
+    let currentSectionId = null;
+    sections.forEach(sec => {
+      if (sec.offsetTop <= scrollPosition) currentSectionId = sec.id;
+    });
+
+    allNavLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === "#" + currentSectionId) {
+        link.classList.add('active');
+      }
+    });
+  }
+  window.addEventListener('scroll', onScroll);
+
+  // Reveal sections on scroll with fade-in effect and on load (visible immediately)
+  function revealSections() {
+    const revealPoint = window.innerHeight / 1.3;
+    sections.forEach(section => {
+      const sectionTop = section.getBoundingClientRect().top;
+      if(sectionTop < revealPoint || window.scrollY === 0){
+        section.classList.add('visible');
+      }
+    });
+  }
+  window.addEventListener('scroll', revealSections);
+  window.addEventListener('load', revealSections);
+
+  // Theme toggle (dark/light mode)
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  let darkMode = false;
+
+  function setTheme(dark) {
+    const body = document.body;
+    if (dark) {
+      body.dataset.theme = 'dark';
+      themeToggleBtn.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="5" />
+        </svg>`;
+    } else {
+      body.dataset.theme = 'light';
+      themeToggleBtn.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M12 3v1m0 16v1m8.66-11.66l-.7.7m-13.41 0l-.7.7M21 12h-1M4 12H3m15.66 6.66l-.7-.7m-13.41 0l-.7-.7" stroke="#111" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="5" stroke="#111" stroke-width="2" fill="none"/>
+        </svg>`;
+    }
+  }
+
+  themeToggleBtn.addEventListener('click', () => {
+    darkMode = !darkMode;
+    setTheme(darkMode);
+  });
+
+  setTheme(darkMode);
+</script>
+
+</body>
+</html>

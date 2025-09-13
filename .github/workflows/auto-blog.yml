@@ -14,6 +14,16 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      - name: Cleanup runner disk space before install
+        run: |
+          echo "Disk space before cleanup:"
+          df -h
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL /usr/local/share/dotnet
+          sudo apt-get clean
+          sudo rm -rf /home/runner/.cache/*
+          echo "Disk space after cleanup:"
+          df -h
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -30,8 +40,7 @@ jobs:
         run: python generate_content.py
 
       - name: Build Jekyll site
-        run: |
-          bundle exec jekyll build
+        run: bundle exec jekyll build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

@@ -17,3 +17,33 @@ defaults:
   values:
     layout: post
     author: Adam Rivers
+
+collections:
+  posts:
+    output: true
+    permalink: /:categories/:year/:month/:day/:title/
+
+# Social links
+twitter_username: adamrivers
+github_username: OfficialAdamRivers
+linkedin_username: adam-rivers-cybersecurity
+
+# Analytics (optional)
+google_analytics: UA-XXXXXXXX-X
+
+# Build settings
+highlighter: rouge
+incremental: false
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - generate_content.py
+  - requirements.txt
+  - README.md

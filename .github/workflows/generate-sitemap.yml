@@ -10,13 +10,12 @@ jobs:
     name: Generate sitemap for officialadamrivers.github.io
 
     steps:
-    - name: Checkout the repository
+    - name: Checkout repository
       uses: actions/checkout@v4
       with:
         fetch-depth: 0
 
     - name: Generate sitemap
-      id: sitemap
       uses: cicirello/generate-sitemap@v1
       with:
         base-url-path: https://officialadamrivers.github.io/

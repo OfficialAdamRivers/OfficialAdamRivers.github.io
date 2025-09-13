@@ -1,0 +1,19 @@
+title: Adam Rivers Cybersecurity Insights
+description: Automated expert cybersecurity blog by Adam Rivers, CEO Hello Security LLC vCISO
+url: "https://officialadamrivers.github.io"
+baseurl: ""
+theme: minima
+markdown: kramdown
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Adam Rivers"

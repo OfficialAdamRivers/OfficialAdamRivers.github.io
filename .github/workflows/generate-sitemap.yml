@@ -7,20 +7,21 @@ on:
 jobs:
   sitemap_job:
     runs-on: ubuntu-latest
-    name: Generate sitemap
+    name: Generate sitemap for officialadamrivers.github.io
 
     steps:
-    - name: Checkout repo
+    - name: Checkout the repository
       uses: actions/checkout@v4
       with:
         fetch-depth: 0
 
     - name: Generate sitemap
+      id: sitemap
       uses: cicirello/generate-sitemap@v1
       with:
-        base-url-path: https://adamrivers.github.io/
+        base-url-path: https://officialadamrivers.github.io/
 
-    - name: Commit sitemap if changed
+    - name: Commit and push sitemap.xml if changed
       run: |
         if [[ `git status --porcelain sitemap.xml` ]]; then
           git config --global user.name 'github-actions'

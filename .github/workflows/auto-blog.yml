@@ -1,0 +1,32 @@
+name: Automated Cybersecurity Blog
+
+on:
+  schedule:
+    - cron: '0 1 * * *'  # run daily at 1AM UTC
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install transformers language_tool_python sentence-transformers jinja2
+
+      - name: Run blog generation script
+        run: python generate_content.py
+
+      - name: Commit changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}

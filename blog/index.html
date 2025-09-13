@@ -1,114 +1,571 @@
 ---
 layout: default
-title: Cybersecurity Industry Insights
-permalink: /blog/
+title: Cybersecurity Blog
 ---
 
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cybersecurity Industry Insights - Adam Rivers</title>
-  <style>
-    body {
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      background: #fafafa;
-      color: #222;
-      line-height: 1.7;
-    }
-    h1 {
-      font-size: 3.5rem;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      margin-bottom: 1.5rem;
-      color: #012a4a;
-      text-align: center;
-    }
-    ul.post-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    ul.post-list li {
-      background: #ffffff;
-      border: 1px solid #e1e5eb;
-      border-radius: 6px;
-      padding: 1.4rem 1.8rem;
-      margin-bottom: 1.6rem;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    ul.post-list li:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 16px rgba(1, 42, 74, 0.15);
-    }
-    ul.post-list li a {
-      font-size: 1.45rem;
-      font-weight: 600;
-      color: #00509e;
-      text-decoration: none;
-      display: block;
-    }
-    ul.post-list li a:hover {
-      color: #003366;
-      text-decoration: underline;
-    }
-    .post-date {
-      font-size: 0.9rem;
-      color: #6c7a89;
-      margin-top: 0.35rem;
-      font-style: italic;
-    }
-    .post-excerpt {
-      color: #444d56;
-      font-size: 1.05rem;
-      margin-top: 0.75rem;
-      max-width: 95%;
-    }
-    hr {
-      border: none;
-      border-top: 1px solid #e1e5eb;
-      margin: 2rem 0;
-    }
-    @media (max-width: 640px) {
-      body {
-        margin: 20px 10px;
-        padding: 0 10px;
-      }
-      h1 {
-        font-size: 2.8rem;
-      }
-      ul.post-list li {
-        padding: 1rem 1.2rem;
-      }
-      ul.post-list li a {
-        font-size: 1.25rem;
-      }
-      .post-excerpt {
-        font-size: 1rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }} - Cybersecurity Insights</title>
+    <meta name="description" content="{{ site.description }}">
+    
+    <!-- SEO and Social Media Meta Tags -->
+    <meta property="og:title" content="{{ site.title }}">
+    <meta property="og:description" content="{{ site.description }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/blog/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ site.title }}">
+    <meta name="twitter:description" content="{{ site.description }}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8fafc;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.1"><polygon points="0,100 1000,100 1000,0"/></svg>') repeat-x;
+            background-size: 100px 100px;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Navigation */
+        .nav {
+            background: white;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #64748b;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #667eea;
+        }
+        
+        /* Main Content */
+        .main {
+            padding: 4rem 0;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+        
+        /* Blog Posts */
+        .posts-section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #1e293b;
+        }
+        
+        .post-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            margin-bottom: 2rem;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .post-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .post-content {
+            padding: 2rem;
+        }
+        
+        .post-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+        
+        .post-date::before {
+            content: "📅 ";
+        }
+        
+        .post-category::before {
+            content: "🏷️ ";
+        }
+        
+        .post-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+        
+        .post-title a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+        
+        .post-title a:hover {
+            color: #667eea;
+        }
+        
+        .post-excerpt {
+            color: #64748b;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .read-more:hover {
+            gap: 1rem;
+        }
+        
+        .read-more::after {
+            content: "→";
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .sidebar-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            padding: 2rem;
+        }
+        
+        .sidebar-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        
+        .about-author {
+            text-align: center;
+        }
+        
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .topics-list {
+            list-style: none;
+        }
+        
+        .topics-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .topics-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .topics-list a {
+            color: #64748b;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .topics-list a:hover {
+            color: #667eea;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .stat {
+            text-align: center;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #667eea;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-top: 0.5rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1e293b;
+            color: white;
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+        
+        .footer-section a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 2rem;
+            text-align: center;
+            color: #94a3b8;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .post-content {
+                padding: 1.5rem;
+            }
+        }
+        
+        /* Loading Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .post-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .post-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+        
+        .post-card:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+        
+        .post-card:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+    </style>
 </head>
 <body>
-  <h1>Cybersecurity Industry Insights</h1>
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        <span class="post-date">{{ post.date | date: "%B %-d, %Y" }}</span>
-        {% if post.excerpt %}
-          <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 180 }}</p>
-        {% endif %}
-        <hr />
-      </li>
-    {% else %}
-      <li>No articles available at this time. Please check back soon!</li>
-    {% endfor %}
-  </ul>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1>{{ site.title }}</h1>
+                <p>{{ site.description }}</p>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <a href="/" class="nav-brand">🛡️ CyberSec Insights</a>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Blog Posts -->
+                <section class="posts-section">
+                    <h2>Latest Cybersecurity Insights</h2>
+                    
+                    {% for post in site.posts limit: 10 %}
+                    <article class="post-card">
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
+                                <span class="post-category">{{ post.categories | first | capitalize }}</span>
+                            </div>
+                            <h3 class="post-title">
+                                <a href="{{ post.url }}">{{ post.title }}</a>
+                            </h3>
+                            <p class="post-excerpt">
+                                {{ post.excerpt | strip_html | truncate: 200 }}
+                            </p>
+                            <a href="{{ post.url }}" class="read-more">Continue Reading</a>
+                        </div>
+                    </article>
+                    {% endfor %}
+                    
+                    {% if site.posts.size == 0 %}
+                    <div class="post-card">
+                        <div class="post-content">
+                            <h3 class="post-title">Welcome to the Blog</h3>
+                            <p class="post-excerpt">
+                                Content is being generated automatically. Check back soon for the latest cybersecurity insights and analysis!
+                            </p>
+                        </div>
+                    </div>
+                    {% endif %}
+                </section>
+                
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <!-- About Author -->
+                    <div class="sidebar-card about-author">
+                        <h3>About Adam Rivers</h3>
+                        <div class="author-avatar">AR</div>
+                        <p>CEO of Hello Security LLC and experienced vCISO with 15+ years in cybersecurity. Helping organizations build robust security programs and navigate complex compliance requirements.</p>
+                    </div>
+                    
+                    <!-- Blog Stats -->
+                    <div class="sidebar-card">
+                        <h3>Blog Statistics</h3>
+                        <div class="stats-grid">
+                            <div class="stat">
+                                <div class="stat-number">{{ site.posts.size }}</div>
+                                <div class="stat-label">Posts</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">20+</div>
+                                <div class="stat-label">Topics</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Popular Topics -->
+                    <div class="sidebar-card">
+                        <h3>Popular Topics</h3>
+                        <ul class="topics-list">
+                            <li><a href="/categories#zero-trust">Zero Trust Architecture</a></li>
+                            <li><a href="/categories#cloud-security">Cloud Security</a></li>
+                            <li><a href="/categories#incident-response">Incident Response</a></li>
+                            <li><a href="/categories#compliance">Compliance & Governance</a></li>
+                            <li><a href="/categories#threat-hunting">Threat Hunting</a></li>
+                            <li><a href="/categories#risk-management">Risk Management</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Newsletter Signup -->
+                    <div class="sidebar-card">
+                        <h3>Stay Updated</h3>
+                        <p>Get the latest cybersecurity insights delivered to your inbox.</p>
+                        <div style="margin-top: 1rem;">
+                            <a href="/feed.xml" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #667eea; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 500; transition: background 0.3s;">
+                                📡 Subscribe to RSS Feed
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <p>Providing strategic cybersecurity insights and practical guidance for security professionals and business leaders.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="/categories#strategy">Strategy</a></li>
+                        <li><a href="/categories#technology">Technology</a></li>
+                        <li><a href="/categories#compliance">Compliance</a></li>
+                        <li><a href="/categories#best-practices">Best Practices</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="https://linkedin.com/in/adam-rivers-cybersecurity">LinkedIn</a></li>
+                        <li><a href="https://twitter.com/adamrivers">Twitter</a></li>
+                        <li><a href="https://github.com/OfficialAdamRivers">GitHub</a></li>
+                        <li><a href="/feed.xml">RSS Feed</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="#vciso">vCISO Services</a></li>
+                        <li><a href="#consulting">Security Consulting</a></li>
+                        <li><a href="#assessments">Risk Assessments</a></li>
+                        <li><a href="#training">Security Training</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved. | Powered by Jekyll & GitHub Pages</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Analytics (if configured) -->
+    {% if site.google_analytics %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ site.google_analytics }}');
+    </script>
+    {% endif %}
 </body>
 </html>

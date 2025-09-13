@@ -9,6 +9,7 @@ import subprocess
 
 BLOG_DIR = "_posts"
 os.makedirs(BLOG_DIR, exist_ok=True)
+
 TOPICS = [
     "vCISO roles and challenges",
     "Emerging AI threats in cybersecurity",
@@ -16,6 +17,7 @@ TOPICS = [
     "Zero trust security architecture",
     "Incident response best practices",
 ]
+
 SEED = 42
 POSTS_PER_DAY = random.randint(1, 3)
 
@@ -32,7 +34,7 @@ layout: post
 title: "{{ title }}"
 date: {{ date }}
 categories: cybersecurity AI quantum vCISO
-tags: cybersecurity, AI, quantum, vCISO, infosec
+tags: cybersecurity, AI, quantum, vCISO, infosecurity
 seo_title: "{{ seo_title }}"
 seo_description: "{{ seo_description }}"
 ---
@@ -124,13 +126,12 @@ def commit_push():
         print("No changes to commit")
 
 def main():
-    print(f"Starting blog post generation: {POSTS_PER_DAY} posts.")
+    print(f"Generating {POSTS_PER_DAY} posts.")
     for _ in range(POSTS_PER_DAY):
         topic = random.choice(TOPICS)
-        print(f"Generating article on: {topic}")
         sections = generate_article(topic)
-        md = render_to_markdown(sections)
-        save_post(md, sections['title'])
+        markdown = render_to_markdown(sections)
+        save_post(markdown, sections['title'])
     commit_push()
 
 if __name__ == "__main__":

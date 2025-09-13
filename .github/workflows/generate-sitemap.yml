@@ -1,0 +1,31 @@
+name: Generate sitemap
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  sitemap_job:
+    runs-on: ubuntu-latest
+    name: Generate sitemap
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Generate sitemap
+      uses: cicirello/generate-sitemap@v1
+      with:
+        base-url-path: https://adamrivers.github.io/
+
+    - name: Commit sitemap if changed
+      run: |
+        if [[ `git status --porcelain sitemap.xml` ]]; then
+          git config --global user.name 'github-actions'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add sitemap.xml
+          git commit -m "Automated sitemap update"
+          git push
+        fi
